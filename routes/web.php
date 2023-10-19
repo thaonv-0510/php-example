@@ -13,14 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/users/sign_in', "App\Http\Controllers\SessionController@get_sign_in");
 
-Route::get('/users/sign_in', function () {
-    return view('users/sign_in');
-});
+Route::post('/users/sign_in', "App\Http\Controllers\SessionController@sign_in")->name("sign_in");
 
 Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
-    Route::post('/users/sign_in', "App/Http/Controllers/SessionController@sign_in")->name("sign_in");
+    Route::get('/', "App\Http\Controllers\HomeController@list_user")->name('home');
 });

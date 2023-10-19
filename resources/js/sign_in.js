@@ -1,10 +1,15 @@
-const axios = require("axios");
+import axios from 'axios';
 
 const btnLogin = document.getElementById("jButtonLogin");
 btnLogin.addEventListener('click', function() {
-    console.log('123')
-    axios.post('users/sign_in', {
+    axios.post('sign_in', {
         email: document.getElementById('jEmail').value,
         password: document.getElementById('jPassword').value,
+    }).then((response) => {
+        if (response.status == 200) {
+            location.href = '/';
+        } else {
+            location.reload();
+        }
     })
 })

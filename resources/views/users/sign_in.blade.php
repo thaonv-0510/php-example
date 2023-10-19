@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Login Page in HTML with CSS Code Example</title>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-  @vite('resources/css/app.css', 'resources/js/app.js')
+  @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
 <!-- partial:index.partial.html -->
